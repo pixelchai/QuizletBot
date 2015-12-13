@@ -11,14 +11,15 @@
 /*eslint-env browser, jquery*/
 'use strict';
 var answers = eval((/QTerm.dataToArray\(.*\)/g).exec($('html').html())[0]);
-//terms;
-$(".value").keydown(function()
+setInterval(function()
 {
+	var t = "";
 	if ($(".value").length > 0)
 	{
-		$(".value").val(toeng($(".free").first().children().text()));
+		t = toeng($(".free").first().children().text());
+		$(".value").val(t);
 	}
-});
+}, 1);
 
 function toeng(s)
 {
@@ -32,5 +33,5 @@ function toeng(s)
 		no++;
 	}
 	console.error("mooo!");
-	return null;
+	return "";
 }
