@@ -9,33 +9,11 @@
 // ==/UserScript==
 /* jshint -W097 */
 /*eslint-env browser, jquery*/
-/*globals terms */
 'use strict';
-var answers=[ 
-     "Healthy eating","Manger sain",
-     "fizzy drinks","les boissons gazeuses (fpl)",
-     "cereals","les céréales (fpl)",
-     "crisps","les chips (mpl)",
-     "water","l'eau (f)",
-     "fruit","les fruits (mpl)",
-     "cakes","les gâteaux (mpl)",
-     "vegetables","les légumes (mpl)",
-     "pulses","les légumes secs (mpl)",
-     "salty food","la nourriture salée",
-     "eggs","les œufs (mpl)",
-     "bread","le pain",
-     "fish","le poisson",
-     "potatoes","les pommes de terre (fpl)",
-     "dairy products","les produits laitiers (mpl)",
-     "meal","le repas",
-     "salt","le sel",
-     "sweets/confectionery","les sucreries (fpl)",
-     "meat","la viande",
-     "to have a balanced diet","manger équilibré",
-     
-];
 //var quizbotrunning=true;
-
+var answers = 
+eval((/QTerm.dataToArray\(.*\)/g).exec($('html').html())[0]);
+//terms;
 $(".value").keydown
 (
 function(){
@@ -54,12 +32,14 @@ function executeAsync(func) {
 function toeng(s){
 	var no = 0;
 	while(no !== answers.length){
-		//console.log("comparing: "+answers[no] +" and "+s);
-	if(s==answers[no]){
-	//	console.log("Translation got: "+answers[no+1]);
-		return answers[no+1];
+		console.log("comparing: "+answers[no].definition +" and "+s);
+	if(s==answers[no].definition){
+		console.log("Translation got: "+answers[no].word);
+//		return answers[no+1];
+return answers[no].word;
 	}
-	no+=2;
+	no++;
 	}
 	console.error("mooo!");
+	return null;
 }
