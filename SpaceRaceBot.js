@@ -19,8 +19,17 @@ setInterval(function()
 		t = toeng($(".free").first().children().text());
 		$(".value").val(t);
 	}
+	if(t !== ""){
+		submit();
+	}
 }, 1);
 
+function submit() {
+    var e = $.Event("keydown");
+    e.which = 13;
+    $('#gun').trigger(e);
+    //ty, the-twee
+}
 function toeng(s)
 {
 	var no = 0;
