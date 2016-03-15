@@ -10,13 +10,14 @@
 /* jshint -W097 */
 /*eslint-env browser, jquery*/
 'use strict';
-var answers = eval((/QTerm.dataToArray\(.*\)/g).exec($('html').html())[0]);
+//var answers = eval((/QTerm.dataToArray\(.*\)/g).exec($('html').html())[0]);
 setInterval(function()
 {
 	var t = "";
 	if ($(".value").length > 0)
 	{
-		t = toeng($(".free").first().children().text());
+	//	t = toeng($(".free").first().children().text());
+	t="porn"
 		$(".value").val(t);
 	}
 	if(t !== ""){
