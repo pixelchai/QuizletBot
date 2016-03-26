@@ -10,6 +10,7 @@
 /* jshint -W097 */
 /*eslint-env browser, jquery*/
 'use strict';
+var failed = false;
 var answers = eval((/QTerm.dataToArray\(.*\)/g).exec($('html').html())[0]);
 setInterval(function()
 {
@@ -19,9 +20,10 @@ setInterval(function()
 		t = toeng($(".free").first().children().text());
 		$(".value").val(t);
 	}
-	if(t !== ""){
+	if(!failed){
 		submit();
 	}
+	failed=false;
 }, 1);
 
 function submit() {
@@ -42,5 +44,6 @@ function toeng(s)
 		no++;
 	}
 	console.error("mooo!");
+	failed=true;
 	return "";
 }
