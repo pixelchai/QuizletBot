@@ -7,7 +7,7 @@ Be the pro you've always wanted to be at quizlet's space race!
 ---
 ##How to Run
 ####Using Console
-Copy all of the code in "spaceracebot.js".
+Copy all of the code in "quizletbot.js".
 Next, go to the quizlet space race game and go do "inspect element"
 Go on the tab that says "console"
 Paste the code and press enter.
