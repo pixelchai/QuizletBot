@@ -1,5 +1,5 @@
 /*eslint-env jquery, browser*/
-$("a#start").trigger("click");
+$("#start").children().trigger("click");
 var terms = $("a.cell[data-type=term]");
 var definitions = $("a.cell[data-type=definition]");
 setInterval(function()
